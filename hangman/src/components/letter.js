@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import Letters from "./letters";
 
 class Letter extends Component {
-  letter = <Letters />;
+   letter = 'a';
   render() {
-    return <span>{this.letter}</span>;
+    return <div>
+      <div>available letters</div>
+      <span>{this.letter}</span>
+    </div> 
   }
 }
 

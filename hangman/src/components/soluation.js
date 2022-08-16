@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 class Soluation extends Component{
+
     render(){
     const numberOfLettersUser = 5
-    this.arr = []
-        for(let i = 0 ; i < {numberOfLettersUser} ; i++) 
-             this.arr.push('_')
-            
-        
-        
-        
-        return <span>{this.arr.map(a => <div>a</div>)}</span> 
+    let arr = []
+    for(let i = 0 ; i < numberOfLettersUser ; i++) {
+        arr.push('_')
+    }
+           
+     return  ( 
+        <div>
+        {arr.map(a => <span>{a} </span>)} 
+
+         </div> 
+         )
     }
 }
 
