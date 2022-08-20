@@ -8,7 +8,7 @@ class Soluation extends Component{
           let letterStatus = this.props.letterStatus
      return  ( 
         <div>
-           {word.split("").map(w => letterStatus[w] ? <Letter letter= {w}/> : <Letter letter = '_'/>)} 
+           {word.split("").map(w => letterStatus[w] ? <Letter letter= {w}/> : <Letter letter = '_ '/>)} 
            <div>
 
            </div>

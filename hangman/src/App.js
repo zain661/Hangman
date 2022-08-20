@@ -19,13 +19,43 @@ class App extends Component {
     this.state = {
       letterStatus : this.generateLetterStatuses() ,
       soluation : {
-        word: "Palestine",
-        hint: "The most beautiful country in the World"
+        word: "PALESTINE",
+        hint: "The most wonderful COUNTRY in the World"
       },
       score : 100
     }
 
   }
+
+  
+
+  selectLetter =(letter) =>{
+   
+    let letterStatus = { ...this.state.letterStatus };
+    let score = this.state.score;
+    // if (letterStatus[letter]) {
+    //   return;
+    // }
+
+    if (this.state.solution.word.includes(letter)) {
+       score += 5;
+    } 
+    else
+      score -= 20;
+
+    letterStatus[letter] = true
+    this.setState({letterStatus , score} ,this.checkWinner)
+  }
+
+  reset = () => {
+    this.setState({
+      letterStatus: this.generateLetterStatuses(),
+      score: 100,
+    });
+  };
+
+  
+
   render() {
 
     return (
@@ -33,7 +63,7 @@ class App extends Component {
         <header className="App-header">
          <Score score = {this.state.score}/>
          <Soluation letterStatus = {this.state.letterStatus} soluation = {this.state.soluation}/>
-         <Letters  letterStatus = {this.state.letterStatus}/>
+         <Letters  letterStatus = {this.state.letterStatus} selectLetter = {this.selectLetter}  />
         </header>
       </div>
     );

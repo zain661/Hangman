@@ -10,7 +10,7 @@ class Letters extends Component {
         return (
         <div>
             <div>available letters</div>
-            {letterArray.map(l=> letterStatus[l] ?<Letter className='clicked' letter={l}/> :<Letter letter={l}/>)} 
+            {letterArray.map(l=> letterStatus[l] ? <Letter className="clicked" letter={l}/> :<Letter letter={l} selectLetter = {this.props.selectLetter}/>)} 
         </div>
                
                )
