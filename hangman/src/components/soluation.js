@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+import Letter from "./letter";
 class Soluation extends Component{
 
-    render(){
-    const numberOfLettersUser = 5
-    let arr = []
-    for(let i = 0 ; i < numberOfLettersUser ; i++) {
-        arr.push('_')
-    }
-           
+    render() {
+          let word = this.props.soluation.word
+          let hint = this.props.soluation.hint
+          let letterStatus = this.props.letterStatus
      return  ( 
         <div>
-        {arr.map(a => <span>{a} </span>)} 
+           {word.split("").map(w => letterStatus[w] ? <Letter letter= {w}/> : <Letter letter = '_'/>)} 
+           <div>
 
+           </div>
+           {hint.split("").map(w => <Letter letter= {w}/>)} 
          </div> 
          )
     }

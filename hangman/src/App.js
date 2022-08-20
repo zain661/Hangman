@@ -7,30 +7,33 @@ import Score from "./components/score";
 import { Component } from "react";
 
 class App extends Component {
+  generateLetterStatuses() {
+    let letterStatus = {}
+    for (let i = 65; i < 91; i++) {
+      letterStatus[String.fromCharCode(i)] = false
+    }
+    return letterStatus
+  }
+  constructor(){
+    super()
+    this.state = {
+      letterStatus : this.generateLetterStatuses() ,
+      soluation : {
+        word: "Palestine",
+        hint: "The most beautiful country in the World"
+      },
+      score : 100
+    }
+
+  }
   render() {
-    return (
-      <div>
-        <Score />
-        <Soluation />
-        <Letters />
-      </div>
-    );
 
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+         <Score score = {this.state.score}/>
+         <Soluation letterStatus = {this.state.letterStatus} soluation = {this.state.soluation}/>
+         <Letters  letterStatus = {this.state.letterStatus}/>
         </header>
       </div>
     );

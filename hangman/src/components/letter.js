@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import Letters from "./letters";
 
 class Letter extends Component {
-   letter = 'a';
   render() {
-    return <div>
-      <div>available letters</div>
-      <span>{this.letter}</span>
-    </div> 
+    return <span>{this.props.letter}</span>
+    
+      
+        {/* <div>available letters</div> */}
+        
+    
   }
 }
 
-export default Letter
+export default Letter;
