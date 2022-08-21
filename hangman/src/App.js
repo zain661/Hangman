@@ -37,11 +37,11 @@ class App extends Component {
     //   return;
     // }
 
-    if (this.state.solution.word.includes(letter)) {
-       score += 5;
-    } 
-    else
-      score -= 20;
+    // if (this.state.solution.word.includes(letter)) {
+    //    score += 5;
+    // } 
+    // else
+    //   score -= 20;
 
     letterStatus[letter] = true
     this.setState({letterStatus , score} ,this.checkWinner)
