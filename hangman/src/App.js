@@ -33,18 +33,18 @@ class App extends Component {
    
     let letterStatus = { ...this.state.letterStatus };
     let score = this.state.score;
-    // if (letterStatus[letter]) {
-    //   return;
-    // }
+    if (letterStatus[letter]) {
+      return;
+    }
 
-    // if (this.state.solution.word.includes(letter)) {
-    //    score += 5;
-    // } 
-    // else
-    //   score -= 20;
+    if (this.state.soluation.word.includes(letter)) {
+       score += 5;
+    } 
+    else
+      score -= 20;
 
     letterStatus[letter] = true
-    this.setState({letterStatus , score} ,this.checkWinner)
+    this.setState({letterStatus , score})
   }
 
   reset = () => {
